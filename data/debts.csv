@@ -1,14 +1,14 @@
 Name,Balance,APR,Minimum
-CareCredit, 1385, 32.99, 45
-Home Depot, 4853, 29.99,80
-Morris	1550, 29.99	60
-K CapOne QS, 1335, 28.23, 45
-Target,	650, 28.2, 30
-G CapOne Platinum, 3363, 27.74,	65
-G CapOne QS, 1995, 27.74, 110
-K CapOne Platinum, 3581, 27.74, 120
-G Citi, 4173, 27.49, 230
-G Credit One, 956, 27.49, 40
-K Credit One, 994, 27.49, 50
-K Target, 1579, 26.4, 30
-K Citi, 5182, 19.49, 230 
+CareCredit,1385,32.99,45
+Home Depot,4853,29.99,80
+Morris,1550,29.99,60
+K CapOne QS,1335,28.23,45
+Target,650,28.2,30
+G CapOne Platinum,3363,27.74,65
+G CapOne QS,1995,27.74,110
+K CapOne Platinum,3581,27.74,120
+G Citi,4173,27.49,230
+G Credit One,956,27.49,40
+K Credit One,994,27.49,50
+K Target,1579,26.4,30
+K Citi,5182,19.49,230 

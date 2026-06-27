@@ -1,40 +1,24 @@
 import streamlit as st
+from utils.calculations import load_debts, total_debt, next_target, avalanche_order
 
-st.set_page_config(
-    page_title="Escape Velocity",
-    page_icon="🚀",
-    layout="wide"
-)
+st.set_page_config(page_title="Escape Velocity", layout="wide")
+
+df = load_debts()
+
+total = total_debt(df)
+target = next_target(df)
+ordered = avalanche_order(df)
 
 st.title("🚀 Escape Velocity")
 
-st.subheader("Build Momentum. Escape Debt.")
+col1, col2, col3 = st.columns(3)
 
-remaining_debt = 31596
-monthly_payment = 1935
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.metric(
-        label="Remaining Debt",
-        value=f"${remaining_debt:,}"
-    )
-
-with col2:
-    st.metric(
-        label="Monthly Payment",
-        value=f"${monthly_payment:,}"
-    )
+col1.metric("Remaining Debt", f"${total:,.0f}")
+col2.metric("Current Target", target["Name"])
+col3.metric("APR", f"{target['APR']}%")
 
 st.divider()
 
-st.header("🎯 Current Mission")
+st.subheader("🔥 Debt Avalanche Order")
 
-st.info("Destroy CareCredit")
-
-st.progress(0)
-
-st.write("Balance: **$1,385**")
-st.write("APR: **32.99%**")
-st.write("Extra Payment: **$800/month**")
+st.dataframe(ordered)

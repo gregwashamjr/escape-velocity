@@ -1,7 +1,14 @@
 import pandas as pd
 
 def load_debts(path="data/debts.csv"):
-    return pd.read_csv(path)
+    df = pd.read_csv(path)
+
+    # Force numeric types (THIS is the fix)
+    df["Balance"] = pd.to_numeric(df["Balance"])
+    df["APR"] = pd.to_numeric(df["APR"])
+    df["Minimum"] = pd.to_numeric(df["Minimum"])
+
+    return df
 
 
 def total_debt(df):

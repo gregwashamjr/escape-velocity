@@ -13,7 +13,7 @@ st.title("🚀 Escape Velocity")
 
 col1, col2, col3 = st.columns(3)
 
-col1.metric("Remaining Debt", f"${total:,.0f}")
+col1.metric("Remaining Debt", f"${float(total):,.0f}")
 col2.metric("Current Target", target["Name"])
 col3.metric("APR", f"{target['APR']}%")
 
